@@ -1,0 +1,6 @@
+#!/bin/bash
+files=$(git status | grep "modified:" | awk '{ print $2  }')
+for line in $files
+do
+	git add $line && printf "Added $line \n"
+done

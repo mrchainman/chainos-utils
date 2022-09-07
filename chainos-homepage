@@ -1,0 +1,4 @@
+#!/bin/bash
+sudo systemctl start docker &&
+cd ~/.data/homepage &&
+sudo docker run -dit --rm --name homepage -p 8080:80 -v "$PWD":/usr/local/apache2/htdocs/ httpd:2.4
