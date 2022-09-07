@@ -2,8 +2,13 @@
 mkdir ~/.config/backups
 fix() {
 	file=$1
-	mv ~/.config/$file ~/.config/backups/$file.bak
-	ln -sf /etc/chainos/$file ~/.config/$file
+	if [ -L $file ]
+	then
+		printf "Not backing up symlink"
+	else
+		mv ~/.config/$file ~/.config/backups/$file.bak
+		ln -sf /etc/chainos/$file ~/.config/$file
+	fi
 }
 
 sudo chown -R $USER:$USER /etc/chainos
