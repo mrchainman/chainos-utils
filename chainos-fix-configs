@@ -6,7 +6,7 @@ fix() {
 	ln -sf /etc/chainos/$file ~/.config/$file
 }
 
-chown -R $USER:$USER /etc/chainos
+sudo chown -R $USER:$USER /etc/chainos
 
 for i in /etc/chainos/*
 do
