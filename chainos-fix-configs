@@ -1,0 +1,15 @@
+#!/bin/bash
+mkdir ~/.config/backups
+fix() {
+	file=$1
+	mv ~/.config/$file ~/.config/backups/$file.bak
+	ln -sf /etc/chainos/$file ~/.config/$file
+}
+
+chown -R $USER:$USER /etc/chainos
+
+for i in /etc/chainos/*
+do
+	file=$(echo $i | awk -F"/" '{print $NF}')
+	fix $file
+done
