@@ -3,6 +3,7 @@ nwp=$(shuf -n1 -e ~/.data/Pictures/Wallpapers/images/*)
 if [ "$1" == "new" ]
 then
 	ln -sf $nwp ~/.config/wallpaper
+	notify-send "Wallpaper Chaned" "Wallapaper is now $nwp"
 fi
 feh --no-fehbg --bg-fill ~/.config/wallpaper
 if [ "$1" == "lock" ]
