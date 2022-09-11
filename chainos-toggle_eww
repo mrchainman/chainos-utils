@@ -3,10 +3,10 @@ set -euo pipefail
 
 export PATH="/home/dani/Desktop/repos/eww/target/release:$PATH"
 
-state=$(eww windows | grep dashboard)
+state=$(eww windows | grep power)
 
-if [ "$state" == "*dashboard" ]; then
-    eww close dashboard
+if [ "$state" == "*power" ]; then
+    eww close power
 else
-    eww open dashboard
+    eww open power
 fi
