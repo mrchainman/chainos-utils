@@ -1,0 +1,2 @@
+#!/bin/bash
+chainos-brightness-xob.py | xob -s chainos
