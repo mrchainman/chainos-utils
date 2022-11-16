@@ -1,0 +1,10 @@
+#!/bin/bash
+while true
+do
+	charg=$(cat /sys/class/power_supply/BAT0/capacity)
+	if [ $charg -lt 20 ]
+	then
+		notify-send "Battery Low!"
+	fi
+	sleep 3600
+done
